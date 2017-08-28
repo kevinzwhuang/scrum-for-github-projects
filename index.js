@@ -72,3 +72,17 @@ const updateAllColumnTotals = () => {
   return projectColumnNodes.reduce(updateColumnTotals, pointTotalsByColumn);
 }
 
+const connectProjectColumnsMutationObserver = () => {
+  const projectColumnsMutationObserver = new MutationObserver((mutations) => {
+    mutations.some((mutation) => {
+      if (mutation.target.classList.contains('js-project-column-cards')) {
+        updateAllColumnTotals()
+      }
+    })
+  });
+
+  const config = { childList: true, subtree: true };
+  const projectContainer = document.getElementsByClassName('project-columns')[0]
+  updateAllColumnTotals();
+  projectColumnsMutationObserver.observe(projectContainer, config);
+}
