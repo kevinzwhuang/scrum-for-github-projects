@@ -9,8 +9,8 @@ class CardTitlePointsRegExpResult {
   constructor(cardTitle) {
     const regExpResult = POINTS_REGEXP.exec(cardTitle);
     this.cardTitle = cardTitle;
-    this.estimationPoints = parseInt(regExpResult[POINTS_REGEXP_GROUPS.estimationPoints] || 0);
-    this.consumptionPoints = parseInt(regExpResult[POINTS_REGEXP_GROUPS.consumptionPoints] || 0);
+    this.estimationPoints = parseInt(regExpResult && regExpResult[POINTS_REGEXP_GROUPS.estimationPoints] || 0);
+    this.consumptionPoints = parseInt(regExpResult && regExpResult[POINTS_REGEXP_GROUPS.consumptionPoints] || 0);
   }
 }
 
