@@ -1,0 +1,12 @@
+{
+  "name": "Scrum for GitHub Projects",
+  "version": "0.1.0",
+  "description": "Scrum for GitHub Projects",
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/*/projects/*"],
+      "js": ["index.js"]
+    }
+  ],
+  "manifest_version": 2
+}
