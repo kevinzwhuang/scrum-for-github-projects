@@ -25,6 +25,8 @@ Consumption points = The number inside of square brackets at the end of the card
 
 If an estimation point or consumption point is not detected on the card title, it's skipped for purposes of summing the point totals.
 
+> For example, `(.1) Update Bachelor in Paradise bracket` has `.1` estimation points and `0` consumption points.
+
 ### Column Headers & Point Totals
 
 Column headers have total estimation points in red surrounded by parentheses and total consumption points in green surrounded by square brackets.
