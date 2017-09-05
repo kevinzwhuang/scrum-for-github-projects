@@ -1,16 +1,14 @@
-const POINTS_REGEXP = /^(?:\((\d+)\))?[^(?:\[\d+\])]*(?:\[(\d+)\])?$/;
-const POINTS_REGEXP_GROUPS = {
-  'estimationPoints': 1,
-  'consumptionPoints': 2
-};
+const ESTIMATION_POINTS_REGEXP = /^\((\d*\.?\d+)\).*$/;
+const CONSUMPTION_POINTS_REGEXP = /^.*\[(\d*\.?\d+)\]$/;
 const pointTotalsByColumn = {};
 
 class CardTitlePointsRegExpResult {
   constructor(cardTitle) {
-    const regExpResult = POINTS_REGEXP.exec(cardTitle);
+    const estRegexpResult = ESTIMATION_POINTS_REGEXP.exec(cardTitle);
+    const consRegexpResult = CONSUMPTION_POINTS_REGEXP.exec(cardTitle);
     this.cardTitle = cardTitle;
-    this.estimationPoints = parseInt(regExpResult && regExpResult[POINTS_REGEXP_GROUPS.estimationPoints] || 0);
-    this.consumptionPoints = parseInt(regExpResult && regExpResult[POINTS_REGEXP_GROUPS.consumptionPoints] || 0);
+    this.estimationPoints = parseFloat(estRegexpResult && estRegexpResult[1] || 0);
+    this.consumptionPoints = parseFloat(consRegexpResult && consRegexpResult[1] || 0);
   }
 }
 
@@ -86,3 +84,5 @@ const connectProjectColumnsMutationObserver = () => {
   updateAllColumnTotals();
   projectColumnsMutationObserver.observe(projectContainer, config);
 }
+
+connectProjectColumnsMutationObserver();
