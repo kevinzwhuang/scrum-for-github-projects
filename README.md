@@ -16,10 +16,12 @@ Once installed, Scrum for GitHub Projects will automatically be active whenever 
 Scrum for GitHub Projects works by looking for estimation and consumption points at the beginning and end of card titles by using the following notation:
 
 Estimation points = The number inside of parenthesis at the beginning of the card title
-`.5` is the amount of estimation points set for `(.5) Start README.md [.2]`.
+
+> For example, `.5` is the amount of estimation points set for `(.5) Start README.md [.2]`.
 
 Consumption points = The number inside of square brackets at the end of the card title
-`.2` is the amount of consumption points set for `(.5) Start README.md [.2]`
+
+> For example, `.2` is the amount of consumption points set for `(.5) Start README.md [.2]`
 
 If an estimation point or consumption point is not detected on the card title, it's skipped for purposes of summing the point totals.
 
