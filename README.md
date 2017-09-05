@@ -20,6 +20,7 @@ Consumption points = The number inside of square brackets at the end of the card
 
 Examples:
 > `(.5) Start README.md [.2]` has `.5` estimation points and `.2` consumption points.
+
 > `(1) Scrape contestant data for the new Bachelorette season [2]` has `1` estimation points and `2` consumption points.
 
 If an estimation point or consumption point is not detected on the card title, it's skipped for purposes of summing the point totals.
